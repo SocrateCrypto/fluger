@@ -6,11 +6,45 @@
     let statusDisplay = document.querySelector('#status');
     let port;
 
+    function addLine(linesId, text) {
+      var senderLine = document.createElement("div");
+      senderLine.className = 'line';
+      var textnode = document.createTextNode(text);
+      senderLine.appendChild(textnode);
+      document.getElementById(linesId).appendChild(senderLine);
+      return senderLine;
+    }
+
+    let currentReceiverLine;
+
+    function appendLines(linesId, text) {
+      const lines = text.split('\r');
+      if (currentReceiverLine) {
+        currentReceiverLine.innerHTML =  currentReceiverLine.innerHTML + lines[0];
+        for (let i = 1; i < lines.length; i++) {
+          currentReceiverLine = addLine(linesId, lines[i]);
+        }
+      } else {
+        for (let i = 0; i < lines.length; i++) {
+          currentReceiverLine = addLine(linesId, lines[i]);
+        }
+      }
+    }
+
     function connect() {
       port.connect().then(() => {
         statusDisplay.textContent = '';
         connectButton.textContent = 'Disconnect';
 
+        port.onReceive = data => {
+          let textDecoder = new TextDecoder();
+          console.log(textDecoder.decode(data));
+          if (data.getInt8() === 13) {
+            currentReceiverLine = null;
+          } else {
+            appendLines('receiver_lines', textDecoder.decode(data));
+          }
+        };
         port.onReceiveError = error => {
           console.error(error);
         };
@@ -45,10 +79,18 @@
       }
     });
 
-    let colorPicker = document.getElementById("color_picker");
 
-    colorPicker.addEventListener("change", function(event) {
-      port.send(new TextEncoder("utf-8").encode(colorPicker.value));
+    let commandLine = document.getElementById("command_line");
+
+    commandLine.addEventListener("keypress", function(event) {
+      if (event.keyCode === 13) {
+        if (commandLine.value.length > 0) {
+          addLine('sender_lines', commandLine.value);
+          commandLine.value = '';
+        }
+      }
+
+      port.send(new TextEncoder('utf-8').encode(String.fromCharCode(event.which || event.keyCode)));
     });
   });
 })();

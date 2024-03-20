@@ -1,21 +1,77 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>TinyUSB</title>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>FlugerUSB</title>
     <script src="serial.js"></script>
-    <script src="application.js"></script>
-    <link rel="stylesheet" href="application.css">
-  </head>
-  <body>
+    <script src="engine.js"></script>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            /* Два столбца, каждый равен 1fr (равная ширина) */
+            gap: 10px;
+            padding: 20px;
+        }
+
+        .button {
+            width: 25%;
+            padding: 10px 5px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .info {
+            width: 75%;
+            padding: 10px;
+            border: 1px solid #3498db;
+            min-height: 30px;
+        }
+    </style>
+</head>
+
+<body>
     <div class="main-content">
-      <h1>Fluger</h1>
-      <div class="connect-container">
-        <button id="connect" class="button black">Connect</button>
-        <span id="status"></span>
-      </div>
-      <div class="color-picker-container">
-         <input type="color" id="color_picker" value="#00ff00" class="color-picker">
-      </div>
+        <h1>Fluger</h1>
+        <div class="connect-container">
+            <button id="connect" class="button black">Connect</button>
+            <span id="status"></span>
+    <div class="container">
+        <button class="button">Connect</button>
+        <div class="info"></div>
+
+        <button class="button">Button 2</button>
+        <div class="info"></div>
+
+        <button class="button">Button 3</button>
+        <div class="info"></div>
+
+        <button class="button">Button 4</button>
+        <div class="info"></div>
+
+        <button class="button">Button 5</button>
+        <div class="info"></div>
+
+        <button class="button">Button 6</button>
+        <div class="info"></div>
+
+        <button class="button">Button 7</button>
+        <div class="info"></div>
+
+        <button class="button">Button 8</button>
+        <div class="info"></div>
+
+        <button class="button">Button 9</button>
+        <div class="info"></div>
+
+        <button class="button">Button 10</button>
+        <div class="info"></div>
     </div>
-  </body>
+</body>
+
 </html>

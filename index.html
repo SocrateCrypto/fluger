@@ -16,8 +16,7 @@
     <div class="lines-body">
         <div id="receiver_lines" class="lines"></div>
         <div class="connect-container">
-           
-            <button id="connect" class="btn btn-info flex-grow-1 mx-2">Connect</button>
+            <button id="connect" class="btn btn-info flex-grow-1 mx-2 dim">Connect</button>
             <span id="status"></span>
     
     <!-- Подключаем Bootstrap JS, если необходимо -->
@@ -35,8 +34,54 @@
 <div><input type="number" class="form control mb-2" placeholder="Speed Max" id="speed_max" value="null"></div>
 <div><input type="number" class="form control mb-2" placeholder="accel_A" id="accel_A" value="null"></div>
 <div><input type="number" class="form control mb-2" placeholder="accel_b" id="accel_b" value="null"></div>
+<div><input type="number" class="form control mb-2" placeholder="Segment_1" id="Segment_1" value="null"></div>
+<div><input type="number" class="form control mb-2" placeholder="Segment_2" id="Segment_2" value="null"></div>
+<div><input type="number" class="form control mb-2" placeholder="Segment_3" id="Segment_3" value="null"></div>
+<div class="input-group mb-2">
+    <label class="input-group-text" for="inputGroupSelect01">Beeper</label>
+    <select class="form-select" id="inputGroupSelect01">
+        <option selected>Choose...</option>
+        <option value="1">Yes</option>
+        <option value="2">No</option>
+       
+    </select>
+</div>
+
+<div class="input-group mb-2">
+    <label class="input-group-text" for="inputGroupSelect01">LED</label>
+    <select class="form-select" id="inputGroupSelect01">
+        <option selected>Choose...</option>
+        <option value="1">Yes</option>
+        <option value="2">No</option>
+
+    </select>
+</div>
+<div class="input-group mb-2">
+    <label class="input-group-text" for="inputGroupSelect01">Limit 360</label>
+    <select class="form-select" id="inputGroupSelect01">
+        <option selected>Choose...</option>
+        <option value="1">Yes</option>
+        <option value="2">No</option>
+
+    </select>
+</div >
+<div class="  input-group mb-2">
+    <label class="  input-group-text" for="inputGroupSelect01">Zero sens.</label>
+    <select class=" form-select" id="inputGroupSelect01">
+        <option selected>Choose...</option>
+        <option value="1">Yes</option>
+        <option value="2">No</option>
+
+    </select>
+</div>
 <button class="btn btn-success flex-grow-1 mx-2 " id="Reed">Reed</button>
 <button class="btn btn-danger flex-grow-1 mx-2 " id="Write" >Write</button>
+<button class="btn btn-info flex-grow-1 mx-2 " id="Calibrate ">Calibrate mode</button>
+
+
+
+                </div>
+                <div>
 
 
 
@@ -67,4 +112,4 @@
 
 
 
-   
+    

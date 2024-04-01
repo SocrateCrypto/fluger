@@ -1,27 +1,19 @@
-document.getElementById('Reed').addEventListener('click', async () => {
-  try {
-    // Запрашиваем доступ к USB-устройству
-    const device = await navigator.usb.requestDevice({
-      filters: [] // фильтры для поиска устройства
-    });
+let variables = {
+  _STEPS: null,
+  _SPEED_MAX: null,
+  _LIMIT_360: null,
+  _ZERO_SENSOR: null,
+  _BEEPER: null,
+  _ACCEL_A: null,
+  _ACCEL_B: null,
+  _CALIBR: null,
+  _SEGMENT_1: null,
+  _SEGMENT_2: null,
+  _SEGMENT_3: null,
+  _LED: null,
+  _STEPER_PARAM: null,
+  _CALIBR_DATA: [null, null, null, null, null, null],
+};
 
-    // Открываем устройство
-    await device.open();
 
-    // Запрашиваем конфигурацию устройства
-    await device.selectConfiguration(1);
 
-    // Запрашиваем доступ к интерфейсу 0
-    await device.claimInterface(0);
-
-    // Определяем массив байтов для передачи
-    const data = new Uint8Array([82, 69, 69, 68]); // ASCII коды для "R", "E", "E", "D"
-
-    // Отправляем данные на устройство
-    await device.transferOut(1, data);
-
-    console.log('Data sent: REED');
-  } catch (error) {
-    console.error('Error:', error);
-  }
-});

@@ -50,55 +50,118 @@
     <body class="bg-dark text-light">
         <div class="container W-50 pt-5">
      <img src="fisch.png" alt="Логотип">
-    <div><input type="number" class="form control mb-2" placeholder="number off STEPS" id="_STEPS" value="null">
-            </div>
-            <div><input type="number" class="form control mb-2" placeholder="Speed Max" id="_SPEED_MAX" value="null"></div>
-            <div><input type="number" class="form control mb-2" placeholder="accel_A" id="_ACCEL_A" value="null"></div>
-            <div><input type="number" class="form control mb-2" placeholder="accel_b" id="_ACCEL_B" value="null"></div>
-            <div><input type="number" class="form control mb-2" placeholder="Segment_1" id="_SEGMENT_1" value="null"></div>
-            <div><input type="number" class="form control mb-2" placeholder="Segment_2" id="_SEGMENT_2" value="null"></div>
-            <div><input type="number" class="form control mb-2" placeholder="Segment_3" id="_SEGMENT_3" value="null"></div>
-            <div><input type="number" class="form control mb-2" placeholder="Stepper_param" id="_STEPER_PARAM" value="null"></div>
+     <!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <title>Форма</title>
+</head>
+<body>
+    <div class="container">
+        <hr style="border-top: 2px dashed rgb(244, 242, 241); width: 100%;">
+        <div class="form-group">
+            <label for="_STEPS" class="form-label">Количество шагов на 360 градусов:</label>
+            <input type="number" class="form-control mb-2" placeholder="number off STEPS" id="_STEPS" value="null">
+        
+        <hr style="border-top: 2px dashed rgb(244, 242, 241); width: 100%;">
+        <div class="form-group">
+            <label for="_SPEED_MAX" class="form-label">Максимальная скорость:</label>
+            <input type="number" class="form-control mb-2" placeholder="Speed Max" id="_SPEED_MAX" value="null">
+        </div>
+        
+        <hr style="border-top: 2px dashed rgb(244, 242, 241); width: 100%;">
+
+        <div class="form-group">
+            <label for="_ACCEL_A" class="form-label">Ускорение:</label>
+            <input type="number" class="form-control mb-2" placeholder="Acceleration" id="_ACCEL_A" value="null">
+        </div>
+        
+        <hr style="border-top: 2px dashed rgb(244, 242, 241); width: 100%;">
+
+        <div class="form-group">
+            <label for="_ACCEL_B" class="form-label">Яркость подсветки LED Ring(0-255):</label>
+            <input type="number" class="form-control mb-2" placeholder="backlight brightness LED Ring" id="_ACCEL_B" value="null">
+        </div>
+        
+        <hr style="border-top: 2px dashed rgb(244, 242, 241); width: 100%;">
+
+        <div class="form-group">
+            <label for="_SEGMENT_1" class="form-label">Угол 1  в режиме Auto:</label>
+            <input type="number" class="form-control mb-2" placeholder="Segment_1" id="_SEGMENT_1" value="null">
+        </div>
+        
+        <hr style="border-top: 2px dashed rgb(244, 242, 241); width: 100%;">
+
+        <div class="form-group">
+            <label for="_SEGMENT_2" class="form-label">Угол 2  в режиме Auto:</label>
+            <input type="number" class="form-control mb-2" placeholder="Segment_2" id="_SEGMENT_2" value="null">
+        </div>
+        
+        <hr style="border-top: 2px dashed rgb(244, 242, 241); width: 100%;">
+
+        <div class="form-group">
+            <label for="_SEGMENT_3" class="form-label">Угол 3  в режиме Auto:</label>
+            <input type="number" class="form-control mb-2" placeholder="Segment_3" id="_SEGMENT_3" value="null">
+        </div>
+        
+        <hr style="border-top: 2px dashed rgb(244, 242, 241); width: 100%;">
+
+        <div class="form-group">
+            <label for="_STEPER_PARAM" class="form-label">Задержка для драйвера шагового двигателя.Рекомендуемый диап.1-10мкс:</label>
+            <input type="number" class="form-control mb-2" placeholder="DRIVER_STEP_TIME" id="_STEPER_PARAM" value="null">
+        </div>
+        
+        <hr style="border-top: 2px dashed rgb(244, 242, 241); width: 100%;">
+    </div>
+</body>
+</html>
+
+     
+
+            
             <div class="input-group mb-2">
-                <label class="input-group-text" for="inputGroupSelect01">Beeper</label>
+                <label class="input-group-text" for="inputGroupSelect01">ON/OFF Beeper</label>
                 <select class="form-select" id="_BEEPER">
                     <option selected>Choose...</option>
-                    <option value=true>Yes</option>
-                    <option value=false>No</option>
+                    <option value=true>ON</option>
+                    <option value=false>OFF</option>
     
                 </select>
             </div>
     
             <div class="input-group mb-2">
-                <label class="input-group-text" for="inputGroupSelect01">LED</label>
+                <label class="input-group-text" for="inputGroupSelect01">ON/OFF LED</label>
                 <select class="form-select" id="_LED">
                     <option selected>Choose...</option>
-                    <option value=true>Yes</option>
-                    <option value=false>No</option>
+                    <option value=true>ON</option>
+                    <option value=false>OFF</option>
     
                 </select>
             </div>
             <div class="input-group mb-2">
-                <label class="input-group-text" for="inputGroupSelect01">Limit 360</label>
+                <label class="input-group-text" for="inputGroupSelect01">ON/OFF Limit 360</label>
                 <select class="form-select" id="_LIMIT_360">
                     <option selected>Choose...</option>
-                    <option value=true>Yes</option>
-                    <option value=false>No</option>
+                    <option value=true>ON</option>
+                    <option value=false>OFF</option>
     
                 </select>
             </div>
             <div class="  input-group mb-2">
-                <label class="  input-group-text" for="inputGroupSelect01">Zero sens.</label>
+                <label class="  input-group-text" for="inputGroupSelect01">ON/OFF LED Ring</label>
                 <select class=" form-select" id="_ZERO_SENSOR">
                     <option selected>Choose...</option>
-                    <option value=true>Yes</option>
-                    <option value=false>No</option>
+                    <option value=true>ON</option>
+                    <option value=false>OFF</option>
     
                 </select>
            
             </div>
 
-
+            <hr style="border-top: 2px dashed rgb(244, 242, 241); width: 100%;">
+            <label for="CALIBR_DATA" class="form-label">Калибровочные данные IMU:</label>
             <div><input type="number" class="form control mb-2" placeholder="CALIBR_DATA_A" id="CALIBR_DATA_A" value="null">
             
             <input type="number" class="form control mb-2 " placeholder="CALIBR_DATA_B" id="CALIBR_DATA_B" value="null">
@@ -108,6 +171,8 @@
             <input type="number" class="form control mb-2" placeholder="CALIBR_DATA_F" id="CALIBR_DATA_F" value="null">
             
             </div>
+            <hr style="border-top: 2px dashed rgb(244, 242, 241); width: 100%;">
+
             <button class="btn btn-success flex-grow-1 mx-2 " id="Reed">Reed</button>
             <button class="btn btn-danger flex-grow-1 mx-2 " id="Write">Write</button>
             <button class="btn btn-info flex-grow-1 mx-2 " id="Calibrate ">Calibrate mode</button>
